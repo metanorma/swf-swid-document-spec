@@ -1,0 +1,26 @@
+{
+  "name": "swids",
+  "version": "1.0.0",
+  "description": "SWIDs and SWID Documents",
+  "main": "index.js",
+  "scripts": {
+    "edit": "node -e \"require('spec-up')()\"",
+    "render": "node -e \"require('spec-up')({ nowatch: true })\"",
+    "dev": "node -e \"require('spec-up')({ dev: true })\""
+  },
+  "keywords": [
+    "decentralized identifier",
+    "DID",
+    "Spatial Web",
+    "SWID"
+  ],
+  "author": "Markus Sabadello",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/peacekeeper/swid-document-spec/issues"
+  },
+  "homepage": "https://peacekeeper.github.io/swid-document-spec/",
+  "dependencies": {
+    "spec-up": "github:brianorwhatever/spec-up#master"
+  }
+}
