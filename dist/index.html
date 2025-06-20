@@ -76,19 +76,18 @@ with the following design goals and properties:</p>
 <li>The Spatial Web will include Entities with DIDs created without interaction with any particular authority.</li>
 </ul>
 <h2 id="overview"><a class="toc-anchor" href="#overview" >§</a> Overview</h2>
-<p>This specification defines “Spatial Web Identifiers” (SWIDs) SWIDs
+<p>This specification defines “Spatial Web Identifiers” (SWIDs)
 and SWID documents, based on the W3C <a class="term-reference" href="#term:decentralized-identifiers">Decentralized Identifiers</a> (DIDs) standard.
 In the Spatial Web, SWIDs are used as identifiers for Entities and Domains.</p>
 <h2 id="swids"><a class="toc-anchor" href="#swids" >§</a> SWIDs</h2>
-<p>A Spatial Web Identifier (SWID) is any DID which fulfills the following two requirements:</p>
+<p>A Spatial Web Identifier (SWID) is any <a class="term-reference" href="#term:did">DID</a> which fulfills the following two requirements:</p>
 <ol>
 <li>
-<p>The DID and its associated DID document MUST be conformant to the [<a class="spec-reference" href="#ref:DID-CORE">DID-CORE</a>]
+<p>The DID and its associated DID document MUST be conformant with the [<a class="spec-reference" href="#ref:DID-CORE">DID-CORE</a>]
 specification.</p>
 </li>
 <li>
-<p>The associated DID document MUST be a conformant <a href="#swid-document" >SWID document</a>, i.e. it MUST have at least
-one <a href="#hstp-service-endpoint-type" >HSTP Service Endpoint</a> and MAY have more than one.</p>
+<p>The associated DID document MUST be a conformant <a href="#swid-documents" >SWID Document</a>.</p>
 </li>
 </ol>
 <p>There is no direct restriction for SWIDs with regard to which DID method they use, as long as the two requirements
@@ -98,15 +97,15 @@ cost, etc. Depending on the use case, some DID methods may be more suited than o
 <code>did:key</code> DID method does not support service endpoints in DID document, therefore this DID method cannot be used
 for SWIDs.</p>
 <p>Note that one DID method - <code>did:swid</code> - has been specifically designed to meet the requirements
-of SWIDs for the Spatial Web. See [[spec: did-swid-spec]] for the specification.</p>
+of SWIDs for the Spatial Web. See [<a class="spec-reference" href="#ref:DID-SWID">DID-SWID</a>] for the specification.</p>
 <h2 id="swid-documents"><a class="toc-anchor" href="#swid-documents" >§</a> SWID Documents</h2>
 <p>SWIDs - like all DIDs - resolve to DID documents defined by the [<a class="spec-reference" href="#ref:DID-CORE">DID-CORE</a>]
 specification.</p>
-<p>This specification defines a profile of the DID document data structure called a SWID document.
-SWID documents are fully conformant DID documents and can include verification methods, service endpoints,
-and other technical metadata. In addition, SWID documents MUST fulfill the following requirement:</p>
+<p>This specification defines a profile of the DID document data structure called a SWID Document.
+SWID Documents are fully conformant DID documents and can include verification methods, service endpoints,
+and other technical metadata. In addition, SWID Documents MUST fulfill the following requirement:</p>
 <ol>
-<li>The SWID document MUST have at least one <a href="#hstp-service-endpoint-type" >HSTP Service Endpoint</a>
+<li>The SWID Document MUST have at least one <a href="#hstp-service-endpoint-type" >HSTP Service Endpoint</a>
 and MAY have more than one.</li>
 </ol>
 <h3 id="hstp-service-endpoint-type"><a class="toc-anchor" href="#hstp-service-endpoint-type" >§</a> HSTP Service Endpoint Type</h3>
@@ -122,7 +121,7 @@ lives.</p>
 <span class="token punctuation">}</span>
 </code></pre>
 <h3 id="example-swid-document"><a class="toc-anchor" href="#example-swid-document" >§</a> Example SWID Document</h3>
-<p>The following is an example of a complete SWID document for a SWID:</p>
+<p>The following is an example of a complete SWID Document for a SWID:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token string">"https://www.w3.org/ns/did/v1.1"</span><span class="token punctuation">,</span>
@@ -161,7 +160,7 @@ by the controller of the DID.</dd>
 <dt><span id="term:did-controllers"><span id="term:did-controller's"><span id="term:did-controller">DID Controller</span></span></span></dt>
 <dd>The entity that controls (create, updates, deletes) a given DID, as defined
 in the [<a class="spec-reference" href="#ref:DID-CORE">DID-CORE</a>].</dd>
-<dt><span id="term:diddoc">DIDDoc</span></dt>
+<dt><span id="term:did-document">DID Document</span></dt>
 <dd>A DID Document as defined by the [<a class="spec-reference" href="#ref:DID-CORE">DID-CORE</a>] – the document returned when a DID is resolved.</dd>
 <dt><span id="term:did-methods"><span id="term:did-method">DID Method</span></span></dt>
 <dd>DID methods are the mechanism by which a particular type of DID and its
@@ -175,6 +174,12 @@ methods are defined using separate DID method specifications.</dd>
         <dd>
           <cite><a href="https://www.w3.org/TR/did-core/">Decentralized Identifiers (DIDs) v1.0</a></cite>. 
           Manu Sporny; Amy Guy; Markus Sabadello; Drummond Reed; 2022-07-19. <span class="reference-status">Status: REC</span>.
+        </dd>
+      
+        <dt id="ref:DID-SWID">DID-SWID</dt>
+        <dd>
+          <cite><a href="https://peacekeeper.github.io/did-swid-spec/">The did:swid DID Method</a></cite>. 
+          Markus Sabadello; 2025-06-20. <span class="reference-status">Status: Draft</span>.
         </dd>
       
 </dl>

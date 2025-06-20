@@ -3,11 +3,11 @@
 SWIDs - like all DIDs - resolve to DID documents defined by the [[spec: DID-CORE]]
 specification.
 
-This specification defines a profile of the DID document data structure called a SWID document.
-SWID documents are fully conformant DID documents and can include verification methods, service endpoints,
-and other technical metadata. In addition, SWID documents MUST fulfill the following requirement:
+This specification defines a profile of the DID document data structure called a SWID Document.
+SWID Documents are fully conformant DID documents and can include verification methods, service endpoints,
+and other technical metadata. In addition, SWID Documents MUST fulfill the following requirement:
 
-1. The SWID document MUST have at least one [HSTP Service Endpoint](#hstp-service-endpoint-type)
+1. The SWID Document MUST have at least one [HSTP Service Endpoint](#hstp-service-endpoint-type)
    and MAY have more than one.
 
 ### HSTP Service Endpoint Type
@@ -28,7 +28,7 @@ lives.
 
 ### Example SWID Document
 
-The following is an example of a complete SWID document for a SWID:
+The following is an example of a complete SWID Document for a SWID:
 
 ```json
 {
