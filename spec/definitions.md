@@ -1,10 +1,5 @@
 ## Definitions
 
-[[def: self-certifying identifier, self-certifying identifiers, SCID, SCIDs]]
-
-~ An object identifier derived from initial data such that an attacker could not
-create a new object with the same identifier.
-
 [[def: Decentralized Identifier, Decentralized Identifiers, DID, DIDs]]
 
 ~ Decentralized Identifiers (DIDs) [[spec:did-core]] are a type of identifier that enable

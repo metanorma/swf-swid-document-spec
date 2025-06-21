@@ -94,22 +94,22 @@ specification.</p>
 above are fulfilled. Different DID methods have different properties with regard to decentralization, scalability,
 cost, etc. Depending on the use case, some DID methods may be more suited than others due to such properties.</p>
 <p>Note that some DID methods have technical limitations that make them unsuitable for SWIDs. For example, the
-<code>did:key</code> DID method does not support service endpoints in DID document, therefore this DID method cannot be used
+<code>did:key</code> DID method does not support service endpoints in DID documents, therefore this DID method cannot be used
 for SWIDs.</p>
 <p>Note that one DID method - <code>did:swid</code> - has been specifically designed to meet the requirements
 of SWIDs for the Spatial Web. See [<a class="spec-reference" href="#ref:DID-SWID">DID-SWID</a>] for the specification.</p>
 <h2 id="swid-documents"><a class="toc-anchor" href="#swid-documents" >§</a> SWID Documents</h2>
-<p>SWIDs - like all DIDs - resolve to DID documents defined by the [<a class="spec-reference" href="#ref:DID-CORE">DID-CORE</a>]
+<p>SWIDs - like all DIDs - resolve to DID documents as defined by the [<a class="spec-reference" href="#ref:DID-CORE">DID-CORE</a>]
 specification.</p>
 <p>This specification defines a profile of the DID document data structure called a SWID Document.
 SWID Documents are fully conformant DID documents and can include verification methods, service endpoints,
 and other technical metadata. In addition, SWID Documents MUST fulfill the following requirement:</p>
 <ol>
-<li>The SWID Document MUST have at least one <a href="#hstp-service-endpoint-type" >HSTP Service Endpoint</a>
+<li>The SWID Document MUST have at least one <a href="#hstp-service-type" >HSTP Service Endpoint</a>
 and MAY have more than one.</li>
 </ol>
-<h3 id="hstp-service-endpoint-type"><a class="toc-anchor" href="#hstp-service-endpoint-type" >§</a> HSTP Service Endpoint Type</h3>
-<p>This specification defines a new service endpoint type <code>HSTPEndpoint</code>, which points to a
+<h3 id="hstp-service-type"><a class="toc-anchor" href="#hstp-service-type" >§</a> HSTP Service Type</h3>
+<p>This specification defines a new service type <code>HSTPEndpoint</code>, which points to a
 Hyperspace Transaction Protocol (HSTP) endpoint for a Spatial Web Node where the entity
 lives.</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
@@ -149,9 +149,6 @@ lives.</p>
 </code></pre>
 <h2 id="definitions"><a class="toc-anchor" href="#definitions" >§</a> Definitions</h2>
 <dl>
-<dt><span id="term:scids"><span id="term:scid"><span id="term:self-certifying-identifiers"><span id="term:self-certifying-identifier">self-certifying identifier</span></span></span></span></dt>
-<dd>An object identifier derived from initial data such that an attacker could not
-create a new object with the same identifier.</dd>
 <dt><span id="term:dids"><span id="term:did"><span id="term:decentralized-identifiers"><span id="term:decentralized-identifier">Decentralized Identifier</span></span></span></span></dt>
 <dd>Decentralized Identifiers (DIDs) [<a class="spec-reference" href="#ref:DID-CORE">DID-CORE</a>] are a type of identifier that enable
 verifiable, decentralized digital identities. A DID refers to any subject (e.g.,
@@ -222,7 +219,7 @@ methods are defined using separate DID method specifications.</dd>
 <li><a href="#swids" >SWIDs</a></li>
 <li><a href="#swid-documents" >SWID Documents</a>
 <ul>
-<li><a href="#hstp-service-endpoint-type" >HSTP Service Endpoint Type</a></li>
+<li><a href="#hstp-service-type" >HSTP Service Type</a></li>
 <li><a href="#example-swid-document" >Example SWID Document</a></li>
 </ul>
 </li>

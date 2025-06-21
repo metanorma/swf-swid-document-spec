@@ -12,7 +12,7 @@ above are fulfilled. Different DID methods have different properties with regard
 cost, etc. Depending on the use case, some DID methods may be more suited than others due to such properties.
 
 Note that some DID methods have technical limitations that make them unsuitable for SWIDs. For example, the
-`did:key` DID method does not support service endpoints in DID document, therefore this DID method cannot be used
+`did:key` DID method does not support service endpoints in DID documents, therefore this DID method cannot be used
 for SWIDs.
 
 Note that one DID method - `did:swid` - has been specifically designed to meet the requirements

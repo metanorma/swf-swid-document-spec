@@ -1,18 +1,18 @@
 ## SWID Documents
 
-SWIDs - like all DIDs - resolve to DID documents defined by the [[spec: DID-CORE]]
+SWIDs - like all DIDs - resolve to DID documents as defined by the [[spec: DID-CORE]]
 specification.
 
 This specification defines a profile of the DID document data structure called a SWID Document.
 SWID Documents are fully conformant DID documents and can include verification methods, service endpoints,
 and other technical metadata. In addition, SWID Documents MUST fulfill the following requirement:
 
-1. The SWID Document MUST have at least one [HSTP Service Endpoint](#hstp-service-endpoint-type)
+1. The SWID Document MUST have at least one [HSTP Service Endpoint](#hstp-service-type)
    and MAY have more than one.
 
-### HSTP Service Endpoint Type
+### HSTP Service Type
 
-This specification defines a new service endpoint type `HSTPEndpoint`, which points to a
+This specification defines a new service type `HSTPEndpoint`, which points to a
 Hyperspace Transaction Protocol (HSTP) endpoint for a Spatial Web Node where the entity
 lives.
 
