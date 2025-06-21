@@ -1,6 +1,6 @@
-# SWIDs and SWID documents
+# SWIDs and SWID Documents
 
-The spec repository for SWIDs and SWID docmuments.
+The spec repository for SWIDs and SWID Documents.
 
 Read the spec: [https://peacekeeper.github.io/swid-document-spec/](https://peacekeeper.github.io/swid-document-spec/)
 
