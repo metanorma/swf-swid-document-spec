@@ -17,3 +17,16 @@ for SWIDs.
 
 Note that one DID method - `did:swid` - has been specifically designed to meet the requirements
 of SWIDs for the Spatial Web. See [[spec: DID-SWID]] for the specification.
+
+### Example SWIDs
+
+The following are compliant SWIDs using different DID methods:
+
+- `did:web:did-web.dev.godiddy.com:575dcb04-9219-49a8-a6ac-0f982ee17438`
+- `did:cheqd:testnet:348e4b40-dff4-4f07-987b-833e3f6e01be`
+- `did:indy:danube:MafjMzJVnX7p5FEv47k8hi`
+- `did:ethr:sepolia:0x0349de79b43afff92e1db0806272aacc3bd644f0b5622d2dfa310f2aa7180be3f2`
+- `did:ebsi:zeUucvX2jE79e75xXSxf9S2`
+- `did:ion:test:EiBBuOWqiR-KD5KByXG8hQ2vycAmT_k3o0agsA1Ntd2guA`
+
+They can be resolved using DID Resolution tools such as https://dev.uniresolver.io/ or https://godiddy.com/.
