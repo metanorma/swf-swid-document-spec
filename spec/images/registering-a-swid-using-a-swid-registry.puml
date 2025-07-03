@@ -1,0 +1,16 @@
+@startuml
+title Registering a SWID using a SWID Registry
+
+actor       "Entity" as E
+participant "Entity Wallet" as EW
+participant "SWID Registry" as REG
+database    "Registry Database" as REGDB
+
+E -> EW : Request registration of SWID (DID)
+EW -> REG : Request registration of SWID (DID)
+REG <-> EW : Prove control of DID\nusing signing requests/responses
+REG -> REGDB : Store SWID in registry (DID)
+REGDB -> REG : Registration confirmation
+REG -> EW : Registration confirmation
+EW -> E : Registration confirmation
+@enduml
