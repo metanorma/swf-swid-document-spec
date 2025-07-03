@@ -1,7 +1,7 @@
 ## SWID Registration
 
 SWIDs may be registered by the Entity in a "SWID Registry", which is
-managed by a Designated Authority.
+managed by a "Designated Authority".
 
 The following diagram describes the process of registering a SWID using a "SWID Registry":
 
