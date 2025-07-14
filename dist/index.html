@@ -166,7 +166,10 @@ managed by a “Designated Authority”.</p>
 <p>Note that registration of SWIDs in a registry is an optional step
 that is separate from the creation of SWIDs. Most SWIDs will not
 be recorded in a centralized registry. SWIDs may be registered in
-a system of distributed, decentralized registries.</p>
+a system of distributed, decentralized registries. The purpose
+of registration is to express membership, and to enable search.</p>
+<p>Registration of a SWID returns a Verifiable Credential (VC) that
+expresses membership of an Entity in a Domain.</p>
 <p>SWIDs are DIDs that can use any DID method, as long as the DIDs fulfill
 the requirements in <a href="#swids" >SWIDs</a>.</p>
 <ul>
@@ -199,11 +202,48 @@ DIF [<a class="spec-reference" href="#ref:DID-REGISTRATION">DID-REGISTRATION</a>
     <span class="token property">"didState"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
         <span class="token property">"state"</span><span class="token operator">:</span> <span class="token string">"finished"</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token property">"operationResult"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-        <span class="token punctuation">{</span>
-            <span class="token property">"registrationConfirmation"</span><span class="token operator">:</span> <span class="token string">"..."</span>
+    <span class="token property">"operationResult"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+        <span class="token property">"membershipCredential"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            ...
         <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>Example Membership Credential:</strong></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"https://www.w3.org guy/ns/credentials/v2"</span><span class="token punctuation">,</span>
+    <span class="token string">"https://spatialwebfoundation.org/contexts/registry/"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"type"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"VerifiableCredential"</span><span class="token punctuation">,</span>
+    <span class="token string">"DomainMembershipCredential"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"issuer"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:web:example.com"</span><span class="token punctuation">,</span>
+    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"Entity"</span><span class="token punctuation">,</span>
+      <span class="token string">"DomainAuthority"</span>
     <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"validFrom"</span><span class="token operator">:</span> <span class="token string">"2025-07-01T00:00:00Z"</span><span class="token punctuation">,</span>
+  <span class="token property">"validUntil"</span><span class="token operator">:</span> <span class="token string">"2034-08-31T23:59:59Z"</span><span class="token punctuation">,</span>
+  <span class="token property">"credentialSubject"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"did:swid:zQmQoeG7u6XBtdXoek5p3aPoTjaSRemHAKrMcY2Hcjpe3jv"</span><span class="token punctuation">,</span>
+    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"Entity"</span><span class="token punctuation">,</span>
+      <span class="token string">"Domain"</span><span class="token punctuation">,</span>
+      <span class="token string">"Person"</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"roles"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"DomainMember"</span><span class="token punctuation">,</span>
+      <span class="token string">"LoyaltyProgramMember"</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"abilities"</span><span class="token operator">:</span> <span class="token punctuation">[</span> ... <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"proof"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    ...
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>During the process of registering a SWID, the Entity MAY be required to prove control

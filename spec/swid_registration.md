@@ -10,7 +10,11 @@ The following diagram describes the process of registering a SWID using a "SWID 
 Note that registration of SWIDs in a registry is an optional step
 that is separate from the creation of SWIDs. Most SWIDs will not
 be recorded in a centralized registry. SWIDs may be registered in
-a system of distributed, decentralized registries.
+a system of distributed, decentralized registries. The purpose
+of registration is to express membership, and to enable search.
+
+Registration of a SWID returns a Verifiable Credential (VC) that
+expresses membership of an Entity in a Domain.
 
 SWIDs are DIDs that can use any DID method, as long as the DIDs fulfill
 the requirements in [SWIDs](#swids).
@@ -52,11 +56,51 @@ HTTP POST to https://<swid-registry>/execute
     "didState": {
         "state": "finished"
     },
-    "operationResult": [
-        {
-            "registrationConfirmation": "..."
+    "operationResult": [{
+        "membershipCredential": {
+            ...
         }
+    }]
+}
+```
+
+**Example Membership Credential:**
+
+```json
+{
+  "@context": [
+    "https://www.w3.org guy/ns/credentials/v2",
+    "https://spatialwebfoundation.org/contexts/registry/"
+  ],
+  "type": [
+    "VerifiableCredential",
+    "DomainMembershipCredential"
+  ],
+  "issuer": {
+    "id": "did:web:example.com",
+    "type": [
+      "Entity",
+      "DomainAuthority"
     ]
+  },
+  "validFrom": "2025-07-01T00:00:00Z",
+  "validUntil": "2034-08-31T23:59:59Z",
+  "credentialSubject": {
+    "id": "did:swid:zQmQoeG7u6XBtdXoek5p3aPoTjaSRemHAKrMcY2Hcjpe3jv",
+    "type": [
+      "Entity",
+      "Domain",
+      "Person"
+    ],
+    "roles": [
+      "DomainMember",
+      "LoyaltyProgramMember"
+    ],
+    "abilities": [ ... ]
+  },
+  "proof": {
+    ...
+  }
 }
 ```
 
