@@ -18,8 +18,8 @@ the requirements in [SWIDs](#swids).
 - An Entity can "bring its own SWID", which had already been created previously,
   according to the applicable DID method's [`create` function](https://identity.foundation/did-registration/#create).
 - If an Entity does not yet have a SWID, the processes of creating and registering
-  a SWID can be combined in a single flow. In this case, by default the `did:swid`
-  DID method can be used, which has been specifically designed to meet the requirements
+  a SWID can be combined in a single flow. In this case, the `did:swid`
+  DID method MUST be used, which has been specifically designed to meet the requirements
   of SWIDs for the Spatial Web. See [[spec: DID-SWID]] for the specification.
 
 To register a SWID in a "SWID Registry", the [`execute` function](https://identity.foundation/did-registration/#execute) of the
