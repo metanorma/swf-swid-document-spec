@@ -26,6 +26,20 @@ lives.
 }
 ```
 
+An HSTP service in a SWID Document can optionally express a "profile", in order to indicate
+which protocols or bindings are supported by the endpoint (e.g. XMPP, RPC, etc.):
+
+```json
+{
+  "service": [{
+    "id": "did:swid:zQmQoeG7u6XBtdXoek5p3aPoTjaSRemHAKrMcY2Hcjpe3jv#hstp",
+    "type": "HSTPEndpoint",
+    "serviceEndpoint": "https://hstp.example.com/hstpendpoint",
+    "profile": "HSTPXMPPProfile"
+  }]
+}
+```
+
 ### Example SWID Document
 
 The following is an example of a complete SWID Document for a SWID:
