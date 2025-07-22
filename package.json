@@ -17,9 +17,9 @@
   "author": "Markus Sabadello",
   "license": "none",
   "bugs": {
-    "url": "https://github.com/peacekeeper/swid-document-spec/issues"
+    "url": "https://github.com/spatial-web-foundation/swid-document-spec/issues"
   },
-  "homepage": "https://peacekeeper.github.io/swid-document-spec/",
+  "homepage": "https://spatial-web-foundation.github.io/swid-document-spec/",
   "dependencies": {
     "spec-up": "github:brianorwhatever/spec-up#master"
   }

@@ -17,17 +17,17 @@
       ],
       "source": {
         "host": "github",
-        "account": "peacekeeper",
+        "account": "spatial-web-foundation",
         "repo": "swid-document-spec"
       },
       "output_path": "./dist",
-      "logo": "https://raw.githubusercontent.com/peacekeeper/swid-document-spec/refs/heads/main/spatialweb.jpg",
-      "logo_link": "https://github.com/peacekeeper/swid-document-spec",
+      "logo": "https://raw.githubusercontent.com/spatial-web-foundation/swid-document-spec/refs/heads/main/spatialweb.jpg",
+      "logo_link": "https://github.com/spatial-web-foundation/swid-document-spec",
       "katex": true,
       "external_specs": [
         {
           "DID-SWID": {
-            "href": "https://peacekeeper.github.io/did-swid-spec/",
+            "href": "https://spatial-web-foundation.github.io/did-swid-spec/",
             "title": "The did:swid DID Method",
             "rawDate": "2025-06-20",
             "authors": [
