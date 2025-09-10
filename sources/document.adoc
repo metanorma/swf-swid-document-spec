@@ -1,0 +1,369 @@
+= SWIDs and SWID Documents v0.1 / Editors Draft
+:doctype: standard
+:docstage: draft
+:draft: 0.1
+:copyright-year: 2025
+:language: en
+:edition: 0.1
+:imagesdir: images
+:mn-document-class: ieee
+:mn-output-extensions: xml,html,doc,rxl,pdf
+:local-cache-only:
+:toc-figures: true
+:toc-tables: true
+
+[[abstract]]
+== Abstract
+
+SWIDs are identifiers for the https://spatialwebfoundation.org/[Spatial Web], with
+the following design goals and properties:
+
+* All Spatial Web Entities (including Credentials) have SWIDs.
+* The Spatial Web SWID Registry ensures uniqueness of the SWIDs.
+* Most SWIDs will be created by a DID Issuer at behest of the Entity and not recorded
+in a centralized registry.
+* The Spatial Web will include Entities with DIDs created without interaction with
+any particular authority.
+
+[[overview]]
+== Overview
+
+This specification defines "Spatial Web Identifiers" (SWIDs) and SWID Documents,
+based on the W3C <<decentralized-identifiers,Decentralized Identifiers>> (DIDs) standard.
+In the Spatial Web, SWIDs are used as identifiers for Entities and Domains.
+
+{{ Decentralized Identifier }}
+
+[[swids]]
+== SWIDs
+
+A Spatial Web Identifier (SWID) is any <<decentralized-identifiers,DID>> which fulfills
+the following two requirements:
+
+. The DID and its associated DID document MUST be conformant with the <<DID-CORE,DID-CORE>>
+specification.
+. The associated DID document MUST be a conformant <<swid-documents,SWID Document>>.
+
+There is no direct restriction for SWIDs with regard to which DID method they use,
+as long as the two requirements above are fulfilled. Different DID methods have different
+properties with regard to decentralization, scalability, cost, etc. Depending on
+the use case, some DID methods may be more suited than others due to such properties.
+
+Note that some DID methods have technical limitations that make them unsuitable for
+SWIDs. For example, the `did:key` DID method does not support service endpoints in
+DID documents, therefore this DID method cannot be used for SWIDs.
+
+Note that one DID method - `did:swid` - has been specifically designed to meet the
+requirements of SWIDs for the Spatial Web. See <<DID-SWID,DID-SWID>> for the specification.
+
+[[example-swids]]
+=== Example SWIDs
+
+The following are compliant SWIDs using different DID methods:
+
+* `did:web:did-web.dev.godiddy.com:575dcb04-9219-49a8-a6ac-0f982ee17438`
+* `did:cheqd:testnet:348e4b40-dff4-4f07-987b-833e3f6e01be`
+* `did:indy:danube:MafjMzJVnX7p5FEv47k8hi`
+* `did:ethr:sepolia:0x0349de79b43afff92e1db0806272aacc3bd644f0b5622d2dfa310f2aa7180be3f2`
+* `did:ebsi:zeUucvX2jE79e75xXSxf9S2`
+* `did:ion:test:EiBBuOWqiR-KD5KByXG8hQ2vycAmT_k3o0agsA1Ntd2guA`
+
+They can be resolved using DID Resolution tools such as https://dev.uniresolver.io/
+or https://godiddy.com/[].
+
+[[swid-documents]]
+== SWID Documents
+
+SWIDs - like all DIDs - resolve to DID documents as defined by the <<DID-CORE,DID-CORE>>
+specification.
+
+This specification defines a profile of the DID document data structure called a
+SWID Document. SWID Documents are fully conformant DID documents and can include
+verification methods, service endpoints, and other technical metadata. In addition,
+SWID Documents MUST fulfill the following requirement:
+
+. The SWID Document MUST have at least one <<hstp-service-type,HSTP Service Endpoint>>
+and MAY have more than one.
+
+[[hstp-service-type]]
+=== HSTP Service Type
+
+This specification defines a new service type `HSTPEndpoint`, which points to a Hyperspace
+Transaction Protocol (HSTP) endpoint for a Spatial Web Node where the entity lives.
+
+[source%unnumbered,json]
+----
+{
+  "service": [{
+    "id": "did:swid:zQmQoeG7u6XBtdXoek5p3aPoTjaSRemHAKrMcY2Hcjpe3jv#hstp",
+    "type": "HSTPEndpoint",
+    "serviceEndpoint": "https://hstp.example.com/hstpendpoint"
+  }]
+}
+
+----
+
+An HSTP service in a SWID Document can optionally express a "profile", in order to
+indicate which protocols or bindings are supported by the endpoint (e.g. XMPP, RPC, etc.):
+
+[source%unnumbered,json]
+----
+{
+  "service": [{
+    "id": "did:swid:zQmQoeG7u6XBtdXoek5p3aPoTjaSRemHAKrMcY2Hcjpe3jv#hstp",
+    "type": "HSTPEndpoint",
+    "serviceEndpoint": "https://hstp.example.com/hstpendpoint",
+    "profile": "HSTPXMPPProfile"
+  }]
+}
+
+----
+
+[[example-swid-document]]
+=== Example SWID Document
+
+The following is an example of a complete SWID Document for a SWID:
+
+[source%unnumbered,json]
+----
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1.1",
+    "https://spatialwebfoundation.org/contexts/did/1.0"
+  ],
+  "id": "did:swid:zQmQoeG7u6XBtdXoek5p3aPoTjaSRemHAKrMcY2Hcjpe3jv",
+  "verificationMethod": [{
+    "id": "did:swid:zQmQoeG7u6XBtdXoek5p3aPoTjaSRemHAKrMcY2Hcjpe3jv#keys-1",
+    "type": "Multikey",
+    "controller": "did:swid:zQmQoeG7u6XBtdXoek5p3aPoTjaSRemHAKrMcY2Hcjpe3jv",
+    "publicKeyMultibase": "z6MkmM42vxfqZQsv4ehtTjFFxQ4sQKS2w6WR7emozFAn5cxu"
+  }],
+  "authentication": [
+    "did:swid:zQmQoeG7u6XBtdXoek5p3aPoTjaSRemHAKrMcY2Hcjpe3jv#keys-1"
+  ],
+  "assertionMethod": [
+    "did:swid:zQmQoeG7u6XBtdXoek5p3aPoTjaSRemHAKrMcY2Hcjpe3jv#keys-1"
+  ],
+  "service": [{
+    "id": "did:swid:zQmQoeG7u6XBtdXoek5p3aPoTjaSRemHAKrMcY2Hcjpe3jv#hstp",
+    "type": "HSTPEndpoint",
+    "serviceEndpoint": "https://hstp.example.com/hstpendpoint"
+  }]
+}
+----
+
+[[swid-registration]]
+== SWID Registration
+
+SWIDs may be registered by the Entity in a "SWID Registry", which is managed by a
+"Designated Authority".
+
+The following diagram describes the process of registering a SWID using a "SWID Registry":
+
+[%unnumbered]
+image::registering-a-swid-using-a-swid-registry.png[]
+
+Note that registration of SWIDs in a registry is an optional step that is separate
+from the creation of SWIDs. Most SWIDs will not be recorded in a centralized registry.
+SWIDs may be registered in a system of distributed, decentralized registries.
+The purpose of registration is to express membership, and to enable search.
+
+Registration of a SWID returns a Verifiable Credential (VC) that expresses membership
+of an Entity in a Domain.
+
+SWIDs are DIDs that can use any DID method, as long as the DIDs fulfill the requirements
+in <<swids,SWIDs>>.
+
+* An Entity can "bring its own SWID", which had already been created previously,
+according to the applicable DID method's https://identity.foundation/did-registration/#create[`create` function].
+
+* If an Entity does not yet have a SWID, the processes of creating and registering
+a SWID can be combined in a single flow. In this case, the `did:swid` DID method
+MUST be used, which has been specifically designed to meet the requirements of SWIDs
+for the Spatial Web. See <<DID-SWID,DID-SWID>> for the specification.
+
+To register a SWID in a "SWID Registry", the https://identity.foundation/did-registration/#execute[`execute` function] of the DIF <<DID-REGISTRATION,DID-REGISTRATION>> specification is used.
+
+*Example Request to register a SWID:*
+
+.HTTP POST to `\https://<swid-registry>/execute`
+[source%unnumbered,json]
+----
+{
+   "operation": [
+      "addToRegistry"
+   ],
+   "operationData": [
+      {}
+   ],
+   "did": "did:swid:zQmQoeG7u6XBtdXoek5p3aPoTjaSRemHAKrMcY2Hcjpe3jv#hstp",
+   "secret": {},
+   "options": {}
+}
+
+----
+
+*Example Response:*
+
+[source%unnumbered,json]
+----
+{
+    "didState": {
+        "state": "finished"
+    },
+    "operationResult": [{
+        "membershipCredential": {
+            ...
+        }
+    }]
+}
+----
+
+*Example Membership Credential:*
+
+[source%unnumbered,json]
+----
+{
+  "@context": [
+    "https://www.w3.org guy/ns/credentials/v2",
+    "https://spatialwebfoundation.org/contexts/registry/"
+  ],
+  "type": [
+    "VerifiableCredential",
+    "DomainMembershipCredential"
+  ],
+  "issuer": {
+    "id": "did:web:example.com",
+    "type": [
+      "Entity",
+      "DomainAuthority"
+    ]
+  },
+  "validFrom": "2025-07-01T00:00:00Z",
+  "validUntil": "2034-08-31T23:59:59Z",
+  "credentialSubject": {
+    "id": "did:swid:zQmQoeG7u6XBtdXoek5p3aPoTjaSRemHAKrMcY2Hcjpe3jv",
+    "type": [
+      "Entity",
+      "Domain",
+      "Person"
+    ],
+    "roles": [
+      "DomainMember",
+      "LoyaltyProgramMember"
+    ],
+    "abilities": [...]
+  },
+  "proof": {
+    ...
+  }
+}
+
+----
+
+During the process of registering a SWID, the Entity MAY be required to prove control
+of its SWID's associated public key, using
+https://identity.foundation/did-registration/#signing-request-set[Signing Requests]
+and https://identity.foundation/did-registration/#signing-response-set[Signing Responses].
+
+*Example Signing Request:*
+
+[source%unnumbered,json]
+----
+{
+	"jobId": "96202012-41d8-424a-85a9-3673bda6abc7",
+	"didState": {
+		"state": "action",
+		"action": "signPayload",
+		"signingRequest": {
+			"signingRequestRegistration": {
+				"kid": "#keys-1",
+				"alg": "EdDSA",
+				"purpose": "authentication",
+				"serializedPayload": "<-- base 64 encoded -->"
+			}
+		}
+	},
+	"didRegistrationMetadata": { ... },
+	"didDocumentMetadata": { ... }
+}
+----
+
+*Example Signing Response:*
+
+[source%unnumbered,json]
+----
+{
+    "jobId": "96202012-41d8-424a-85a9-3673bda6abc7",
+    "options": {
+        "clientSecretMode": true
+    },
+    "secret": {
+        "signingResponse": {
+            "signingRequestRegistration": {
+                "signature": "<-- base64 encoded -->"
+            }
+        }
+    },
+    "didDocument": {}
+}
+
+----
+
+[[swid-registration-previous]]
+== SWID Registration (previous)
+
+This section contains an earlier diagram which describes the process of registering
+SWIDs. This may be removed in a future version of this document.
+
+[%unnumbered]
+image::swid-registration.png[]
+
+[[definitions]]
+[heading="terms and definitions"]
+== Definitions
+
+[[decentralized-identifiers]]
+=== Decentralized Identifier
+
+Decentralized Identifiers (DIDs) <<DID-CORE,DID-CORE>> are a type of identifier that
+enable verifiable, decentralized digital identities. A DID refers to any subject
+(e.g., a person, organization, thing, data model, abstract entity, etc.) as determined
+by the controller of the DID.
+
+=== DID Controller
+
+The entity that controls (create, updates, deletes) a given DID, as defined in the
+<<DID-CORE,DID-CORE>>.
+
+
+=== DID Document
+
+A DID Document as defined by the <<DID-CORE,DID-CORE>> -- the document returned when
+a DID is resolved.
+
+=== DID Method
+
+DID methods are the mechanism by which a particular type of DID and its associated
+DID document are created, resolved, updated, and deactivated. DID methods are defined
+using separate DID method specifications.
+
+[[references]]
+[bibliography]
+== References
+
+* [[[DID-CORE,1]]] _https://www.w3.org/TR/did-core/[Decentralized Identifiers (DIDs) v1.0]_. Manu Sporny; Amy Guy; Markus Sabadello; Drummond Reed; 2022-07-19. Status: REC.
+ 
+* [[[DID-REGISTRATION,2]]] _https://identity.foundation/did-registration/[DID Registration]_. Markus Sabadello; Cihan Saglam; Ahamed Azeem; 2025-05-19. Status: Draft.
+ 
+* [[[DID-SWID,3]]] _https://spatial-web-foundation.github.io/did-swid-spec/[The did:swid DID Method]_. Markus Sabadello; 2025-06-20. Status: Draft.
+ 
+
+[[version-changelog]]
+== Version Changelog
+
+The following lists the substantive changes in each version of the specification.
+
+* Version 0.1
+** Initial version
+
