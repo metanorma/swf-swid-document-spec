@@ -1,0 +1,9 @@
+---
+metanorma:
+  source:
+    files:
+      - sources/document.adoc
+
+  collection:
+    name: SWIDs and SWID 
+    organization: Spatial Web Foundation / SWID 
