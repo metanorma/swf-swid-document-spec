@@ -1,0 +1,5 @@
+== Overview
+
+This specification defines "Spatial Web Identifiers" (SWIDs)
+and SWID Documents, based on the W3C {{Decentralized Identifier,Decentralized Identifiers,options="linkmention,linkref"}} (DIDs) standard.
+In the Spatial Web, SWIDs are used as identifiers for Entities and Domains.
