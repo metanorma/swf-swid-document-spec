@@ -1,6 +1,11 @@
 [bibliography]
 == Bibliography
 
+* [[[SWF,Spatial Web Foundation]]],
+span:organization[Spatial Web Foundation]
+span:title[Spatial Web Foundation]
+span:uri.citation[https://spatialwebfoundation.org/]
+
 * [[[DID-REGISTRATION,DID-REGISTRATION]]],
 span:organization[Decentralized Identity Foundation]
 span:type[standard]
