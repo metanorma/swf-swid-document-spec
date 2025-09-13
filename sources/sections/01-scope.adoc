@@ -1,0 +1,6 @@
+== Scope
+
+This document defines spatial web identifiers (SWIDs) and SWID documents,
+based on the decentralized identifier (DID) (<<DID-CORE>>).
+
+In the Spatial Web, SWIDs are used as identifiers for Entities and Domains.

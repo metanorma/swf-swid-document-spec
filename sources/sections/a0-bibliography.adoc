@@ -1,0 +1,31 @@
+[bibliography]
+== Bibliography
+
+* [[[DID-REGISTRATION,DID-REGISTRATION]]],
+span:organization[Decentralized Identity Foundation]
+span:type[standard]
+span:title[DID Registration]
+span:givenname[Markus] span:surname[Sabadello]
+span:givenname[Cihan] span:surname[Saglam]
+span:givenname[Ahamed] span:surname[Azeem]
+span:docid[DIF did-registration]
+span:date[2025-05-19]
+span:note[Status: Draft]
+span:uri.citation[https://identity.foundation/did-registration]
+
+* [[[DID-SWID,DID-SWID]]],
+span:title[The did:swid DID Method]
+span:organization[Spatial Web Foundation]
+span:givenname[Markus] span:surname[Sabadello]
+span:date[2025-06-20]
+span:note[Status: Draft]
+span:docid[SWF did-swid]
+
+* [[[uniresolver,uniresolver.io]]],
+span:title[uniresolver.io]
+span:uri.citation[https://dev.uniresolver.io/]
+
+* [[[godiddy,godiddy.com]]],
+span:organization[godiddy.com]
+span:title[godiddy.com]
+span:uri.citation[https://godiddy.com/]
