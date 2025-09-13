@@ -1,4 +1,6 @@
-== Version Changelog
+
+[appendix,obligation="informative"]
+== Version log
 
 The following lists the substantive changes in each version of the specification.
 

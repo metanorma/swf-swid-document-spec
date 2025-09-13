@@ -1,0 +1,58 @@
+== Terms and definitions
+
+=== spatial web identifier
+admitted:[SWID]
+
+[%metadata]
+abbreviation-type:: initialism
+
+conformant {{decentralized identifier,DID}} whose associated {{DID document}} is a
+conformant {{SWID document}}
+
+=== SWID document
+
+{{DID document}} conformant to <<swid-documents>> of this document
+
+
+=== decentralized identifier
+admitted:[DID]
+
+[%metadata]
+abbreviation-type:: initialism
+
+type of identifier that enable verifiable, decentralized digital identities
+
+NOTE: A DID refers to any subject (e.g., a person, organization, thing, data
+model, abstract entity, etc.) as determined by the controller of the DID.
+
+[.source]
+<<DID-CORE>>
+
+=== DID controller
+
+entity that controls (create, updates, deletes) a given {{DID}}
+
+[.source]
+<<DID-CORE>>
+
+
+=== DID document
+
+the document returned when a {{DID}} is resolved
+
+[.source]
+<<DID-CORE>>
+
+
+=== DID method
+
+mechanism by which a particular type of {{DID}} and its associated
+{{DID document}} are created, resolved, updated, and deactivated
+
+NOTE: DID methods are defined using separate DID method specifications.
+
+
+=== SWID registry
+
+register of {{spatial web identifier}} registrations managed by a designated
+authority
