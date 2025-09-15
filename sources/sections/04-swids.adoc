@@ -33,4 +33,4 @@ The following are compliant SWIDs using different DID methods:
 * `did:ion:test:EiBBuOWqiR-KD5KByXG8hQ2vycAmT_k3o0agsA1Ntd2guA`
 
 They can be resolved using DID Resolution tools such as
-<<uniresolver.io>> or <<godiddy.com>>.
+<<uniresolver>> or <<godiddy>>.
