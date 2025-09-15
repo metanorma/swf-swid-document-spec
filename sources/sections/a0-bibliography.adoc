@@ -20,11 +20,12 @@ span:uri.citation[https://identity.foundation/did-registration]
 
 * [[[DID-SWID,DID-SWID]]],
 span:title[The did:swid DID Method]
+span:uri:citation[https://spatial-web-foundation.github.io/did-swid-spec/]
 span:organization[Spatial Web Foundation]
 span:givenname[Markus] span:surname[Sabadello]
 span:date[2025-06-20]
 span:note[Status: Draft]
-span:docid[SWF did-swid]
+span:docid[SWF 4:2025 (0.1.0)]
 
 * [[[uniresolver,uniresolver.io]]],
 span:title[uniresolver.io]

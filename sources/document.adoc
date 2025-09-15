@@ -1,5 +1,5 @@
 = SWIDs and SWID Documents
-:docnumber: 1
+:docnumber: 3
 :edition: 1
 :revdate: 2025-07-22
 :copyright-year: 2025
@@ -9,10 +9,10 @@
 :committee: SWID
 :committee-type: technical
 :mn-document-class: swf
-:mn-output-extensions: xml,html,doc,pdf,rxl
+:mn-output-extensions: xml,html,pdf,rxl
 :doctype: standard
 :status: published
-:docidentifier: SWF swid:2025 (0.1.0)
+:docidentifier: SWF 3:2025 (0.1.0)
 :surname: Sabadello
 :givenname: Markus
 :role: editor
@@ -20,17 +20,6 @@
 :local-cache-only:
 :toc-figures: true
 :toc-tables: true
-
-== Metanorma-Extension
-
-=== user-css
-
-[source]
-----
-.Note, .note { background-color: white}
-.Admonition { background-color: white}
-.example { background-color: white}
-----
 
 include::sections/00-abstract.adoc[]
 
