@@ -37,8 +37,9 @@ To register a SWID in a "SWID Registry", the `execute` function
 [example]
 .Request to register a SWID
 ====
-.HTTP POST to `https:// <swid-registry> /execute`
-[source%unnumbered,json]
+HTTP POST to identifier:[https://<swid-registry>/execute]
+
+[source,json]
 ----
 {
   "operation": [
@@ -57,7 +58,7 @@ To register a SWID in a "SWID Registry", the `execute` function
 [example]
 .Response
 ====
-[source%unnumbered,json]
+[source,json]
 ----
 {
   "didState": {
@@ -75,11 +76,11 @@ To register a SWID in a "SWID Registry", the `execute` function
 [example]
 .Membership Credential
 ====
-[source%unnumbered]
+[source]
 ----
 {
   "@context": [
-    "https://www.w3.org guy/ns/credentials/v2",
+    "https://www.w3.org/ns/credentials/v2",
     "https://spatialwebfoundation.org/contexts/registry/"
   ],
   "type": [
@@ -122,7 +123,7 @@ control of its SWID's associated public key, using DID Signing Requests
 [example]
 .Signing Request
 ====
-[source%unnumbered]
+[source]
 ----
 {
 	"jobId": "96202012-41d8-424a-85a9-3673bda6abc7",
@@ -147,7 +148,7 @@ control of its SWID's associated public key, using DID Signing Requests
 [example]
 .Signing Response
 ====
-[source%unnumbered,json]
+[source,json]
 ----
 {
   "jobId": "96202012-41d8-424a-85a9-3673bda6abc7",
