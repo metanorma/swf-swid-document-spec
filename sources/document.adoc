@@ -1,0 +1,42 @@
+= SWIDs and SWID Documents
+:docnumber: 3
+:edition: 1
+:revdate: 2025-07-22
+:copyright-year: 2025
+:language: en
+:title-intro-en: Spatial web technologies
+:title-main-en: SWIDs and SWID Documents
+:committee: SWID
+:committee-type: technical
+:mn-document-class: swf
+:mn-output-extensions: xml,html,pdf,rxl
+:doctype: standard
+:status: published
+:docidentifier: SWF 3:2025 (0.1.0)
+:surname: Sabadello
+:givenname: Markus
+:role: editor
+:imagesdir: images
+:local-cache-only:
+:toc-figures: true
+:toc-tables: true
+
+include::sections/00-abstract.adoc[]
+
+include::sections/01-scope.adoc[]
+
+include::sections/02-normrefs.adoc[]
+
+include::sections/03-terms.adoc[]
+
+include::sections/04-swids.adoc[]
+
+include::sections/05-swid_documents.adoc[]
+
+include::sections/06-swid_registration.adoc[]
+
+include::sections/07-swid_registration_previous.adoc[]
+
+include::sections/a0-bibliography.adoc[]
+
+include::sections/a1-version-changelog.adoc[]
