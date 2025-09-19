@@ -5,8 +5,7 @@
 :copyright-year: 2025
 :language: en
 :title-intro-en: The Spatial Web 
-:title-main-en: Spatial Web Identifiers (SWIDs)
-and SWID Documents Implementation Specification
+:title-main-en: Spatial Web Identifiers (SWIDs) and SWID Documents Implementation Specification
 :committee: SWID
 :committee-type: technical
 :mn-document-class: swf
