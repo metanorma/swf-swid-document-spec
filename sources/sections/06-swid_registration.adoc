@@ -8,7 +8,7 @@ The following diagram describes the process of registering a SWID using a "SWID
 Registry":
 
 .Process of registering a SWID using a SWID Registry
-image::plantuml_image::plantuml/registering-a-swid-using-a-swid-registry.puml[]
+image::registering-a-swid-using-a-swid-registry.puml[]
 
 Note that registration of SWIDs in a registry is an optional step
 that is separate from the creation of SWIDs. Most SWIDs will not
